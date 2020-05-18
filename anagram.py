@@ -3,13 +3,13 @@ import sys
 import unidecode
 
 def compare_string(string):
+    string = unidecode.unidecode(string)
+
     remove_these_chars = ['\'', '"', ' ', '-', '.']
     string = ''.join(sorted(string.lower()))
 
     for c in remove_these_chars:
         string = string.replace(c, '')
-
-    string = unidecode.unidecode(string)
 
     return string
 
